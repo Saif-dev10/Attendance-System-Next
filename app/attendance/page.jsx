@@ -37,11 +37,14 @@ function saveToStorage(key, value) {
 
 function getTodayCourses(schedule) {
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const today = days[new Date().getDay()];
+  const today = days[new Date().getDay()].toLowerCase();
 
-  if (!schedule || schedule.length === 0) return [];
+  if (!Array.isArray(schedule)) return [];
 
-  return schedule.filter((course) => course.day === today);
+  return schedule.filter((course) => {
+    if (!course?.day) return false;
+    return course.day.toString().trim().toLowerCase() === today;
+  });
 }
 
 export default function Attendance() {
