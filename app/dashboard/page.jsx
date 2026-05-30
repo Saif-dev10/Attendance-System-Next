@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { SideBar } from "@/components/Sidebar";
 
 function loadFromStorage(key, defaultValue = null) {
   try {
@@ -124,7 +125,10 @@ export default function Dashboard() {
   }
 
   return (
-    <main className="min-h-screen w-full bg-gray-50">
+    <>
+    <SideBar />
+    
+      <main className="min-h-screen w-full bg-gray-50">
 
       {/* OFFSET WRAPPER (FIX FOR SIDEBAR) */}
       <div className="w-full lg:pl-[350px]">
@@ -272,5 +276,7 @@ export default function Dashboard() {
         </div>
       </div>
     </main>
+    </>
+    
   );
 }

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 // import { Header } from "@/components/Header";
-// import { SideBar } from "@/components/Sidebar";
+import { SideBar } from "@/components/Sidebar";
 // import { SaveMessage } from "@/components/SaveMessage";
 // import table from "/public/table.png";
 
@@ -94,8 +94,9 @@ export default function TablePage() {
     <div className="font-[Segoe_UI] bg-white min-h-screen">
        {/* <link rel="icon" href={table} /> */}
 
-        {/* <SideBar isSidebarOpen={isSidebarOpen} sidebarClose={toggleSidebar} />
-        // <SaveMessage showMessage={showMessage} />
+         <SideBar isSidebarOpen={isSidebarOpen} sidebarClose={toggleSidebar} />
+         
+         {/* <SaveMessage showMessage={showMessage} /> */}
 
       {/* sidebar toggle */}
       {/* <button

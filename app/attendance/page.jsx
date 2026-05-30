@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 // import { Header } from "../components/Header";
-// import { SideBar } from "../components/Sidebar";
+import { SideBar } from "@/components/Sidebar";
 // import { SaveMessage } from "../components/SaveMessage";
 // import progress from "../../../public/development.png";
 
@@ -150,9 +150,9 @@ export default function Attendance() {
       {/* <link rel="icon" href={progress} /> */}
       <title>Attendance</title>
 
-      {/* <Header title="Mark Attendance" subtitle="Step 3: Track attendance" />
+      {/* <Header title="Mark Attendance" subtitle="Step 3: Track attendance" /> */}
 
-      <SideBar isSidebarOpen={isSidebarOpen} sidebarClose={toggleSidebar} /> */}
+      <SideBar isSidebarOpen={isSidebarOpen} sidebarClose={toggleSidebar} /> 
 
       {/* <button
         onClick={toggleSidebar}

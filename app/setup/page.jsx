@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { SideBar } from "@/components/Sidebar";
 
 export default function SemesterSetup() {
   const [showMessage, setShowMessage] = useState(false);
@@ -74,7 +75,9 @@ export default function SemesterSetup() {
   }
 
   return (
-    <main className="max-w-[600px] px-5 py-10 font-['Segoe_UI',system-ui,sans-serif] bg-white text-black min-h-screen md:ml-35 lg:ml-80">
+    <>
+    <SideBar />
+      <main className="max-w-[600px] px-5 py-10 font-['Segoe_UI',system-ui,sans-serif] bg-white text-black min-h-screen md:ml-35 lg:ml-80">
       {showMessage && (
         <div className="fixed top-[50px] right-[380px] z-[1000]">
           <div className="bg-emerald-500 text-white px-6 py-4 rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.15)] flex items-center gap-2">
@@ -217,6 +220,8 @@ export default function SemesterSetup() {
           You can edit these dates later from the settings menu.
         </p>
       </div>
-    </main>
+     </main>
+    </>
+    
   );
 }
