@@ -74,7 +74,7 @@ export default function SemesterSetup() {
   }
 
   return (
-    <main className="max-w-[600px] mx-auto px-5 py-10 font-['Segoe_UI',system-ui,sans-serif] bg-white text-black min-h-screen">
+    <main className="max-w-[600px] px-5 py-10 font-['Segoe_UI',system-ui,sans-serif] bg-white text-black min-h-screen md:ml-35 lg:ml-80">
       {showMessage && (
         <div className="fixed top-[50px] right-[380px] z-[1000]">
           <div className="bg-emerald-500 text-white px-6 py-4 rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.15)] flex items-center gap-2">
@@ -204,7 +204,7 @@ export default function SemesterSetup() {
 
         <button
           type="submit"
-          className="w-full py-4 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl text-base font-semibold flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(59,130,246,0.3)] hover:-translate-y-[2px] active:translate-y-0 active:opacity-80 transition-all"
+          className="w-full py-4 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl text-base font-semibold flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(59,130,246,0.3)] hover:-translate-y-[2px] active:translate-y-0 active:opacity-80 transition-all cursor-pointer"
         >
           💾 Save & Continue
         </button>
