@@ -8,6 +8,7 @@ import { Header } from "@/components/Header";
 export default function SemesterSetup() {
   const [showMessage, setShowMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [sideBarOpen, setIsSidebarOpen] = useState(false);
 
   const [dates, setDates] = useState({
     startDate: "",
@@ -17,6 +18,10 @@ export default function SemesterSetup() {
 
   const router = useRouter();
   const timeoutRef = useRef(null);
+
+  function toggleSidebar() {
+    setIsSidebarOpen(!sideBarOpen);
+  }
 
   useEffect(() => {
     return () => {
@@ -77,8 +82,16 @@ export default function SemesterSetup() {
 
   return (
     <>
-    <Header />
-    <SideBar />
+    <Header 
+      title="Semester Setup" 
+      subtitle="Step 2: Add your semester setup here"
+    />
+
+    <SideBar 
+      isSidebarOpen={sideBarOpen} 
+      sidebarClose={toggleSidebar}
+    />
+
       <main className="max-w-[600px] px-5 py-10 font-['Segoe_UI',system-ui,sans-serif] bg-white text-black min-h-screen md:ml-35 lg:ml-80">
 
       {showMessage && (

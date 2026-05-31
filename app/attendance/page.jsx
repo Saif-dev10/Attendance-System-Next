@@ -1,7 +1,7 @@
  "use client"
 
 import { useState, useEffect } from "react";
-// import { Header } from "../components/Header";
+import { Header } from "@/components/Header";
 import { SideBar } from "@/components/Sidebar";
 // import { SaveMessage } from "../components/SaveMessage";
 // import progress from "../../../public/development.png";
@@ -150,9 +150,15 @@ export default function Attendance() {
       {/* <link rel="icon" href={progress} /> */}
       <title>Attendance</title>
 
-      {/* <Header title="Mark Attendance" subtitle="Step 3: Track attendance" /> */}
+      <Header 
+        title="Mark Attendance" 
+        subtitle="Step 3: Track attendance"
+      />
 
-      <SideBar isSidebarOpen={isSidebarOpen} sidebarClose={toggleSidebar} /> 
+      <SideBar 
+        isSidebarOpen={isSidebarOpen} 
+        sidebarClose={toggleSidebar}
+      /> 
 
       {/* <button
         onClick={toggleSidebar}
@@ -165,7 +171,7 @@ export default function Attendance() {
 
       {/* <SaveMessage showMessage={showMessage} /> */}
 
-      <main className="max-w-[700px] mx-auto lg:ml-[420px] px-5 py-8 pb-24">
+      <main className="max-w-[700px] mx-auto lg:ml-[420px] px-5 py-8 pb-24 mt-14">
 
         {/* PROGRESS BAR (RESTORED) */}
         <div className="flex items-center justify-center gap-4 mb-8">

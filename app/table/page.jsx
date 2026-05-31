@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-// import { Header } from "@/components/Header";
+import { Header } from "@/components/Header";
 import { SideBar } from "@/components/Sidebar";
 // import { SaveMessage } from "@/components/SaveMessage";
 // import table from "/public/table.png";
@@ -94,7 +94,10 @@ export default function TablePage() {
     <div className="font-[Segoe_UI] bg-white min-h-screen">
        {/* <link rel="icon" href={table} /> */}
 
-         <SideBar isSidebarOpen={isSidebarOpen} sidebarClose={toggleSidebar} />
+         <SideBar 
+            isSidebarOpen={isSidebarOpen} 
+            sidebarClose={toggleSidebar}
+          />
          
          {/* <SaveMessage showMessage={showMessage} /> */}
 
@@ -108,10 +111,13 @@ export default function TablePage() {
         <span className="w-6 h-[2px] bg-black"></span>
       </button> */}
 
-      {/* <Header title="Timetable Setup" subtitle="Step 2: Add your weekly courses" /> */}
+      <Header 
+        title="Timetable Setup" 
+        subtitle="Step 2: Add your weekly courses"
+      />
 
       {/* MAIN CONTAINER (matches padding-left:300px + max-width:1000px) */}
-      <main className="max-w-[1000px] mx-auto px-5 py-[30px] lg:pl-[300px] box-border font-[Segoe_UI,system-ui,sans-serif]">
+      <main className="max-w-[1000px] mx-auto px-5 py-[30px] lg:pl-[300px] box-border font-[Segoe_UI,system-ui,sans-serif] mt-16">
         {/* PROGRESS BAR */}
         <div className="flex items-center justify-center mb-10 px-5">
           <div className="flex flex-col items-center gap-2">

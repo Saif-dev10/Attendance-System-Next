@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { SideBar } from "@/components/Sidebar";
+import { Header } from "@/components/Header";
 
 function loadFromStorage(key, defaultValue = null) {
   try {
@@ -18,7 +19,16 @@ function getTodayKey() {
 }
 
 function getTodayCourses(schedule) {
-  const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+
   const today = days[new Date().getDay()];
 
   if (!Array.isArray(schedule)) return [];
@@ -72,6 +82,8 @@ function calculateSemesterProgress(dates) {
   return ((now - start) / (end - start)) * 100;
 }
 
+// Main function
+
 export default function Dashboard() {
   const navigate = useRouter();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -124,11 +136,23 @@ export default function Dashboard() {
     return "text-red-700 bg-red-100";
   }
 
+  function toggleSidebar() {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <>
-    <SideBar />
+    <Header 
+      title="Dashboard Page" 
+      subtitle="Your dashboard is here."
+    />
+
+    <SideBar
+      isSidebarOpen={isSidebarOpen}
+      sidebarClose={toggleSidebar}
+    />
     
-      <main className="min-h-screen w-full bg-gray-50">
+      <main className="min-h-screen w-full bg-gray-50 mt-14">
 
       {/* OFFSET WRAPPER (FIX FOR SIDEBAR) */}
       <div className="w-full lg:pl-[350px]">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SideBar } from "@/components/Sidebar";
+import { Header } from "@/components/Header";
 
 function getCoursesPercent(courseId, attendanceData) {
   const data = attendanceData[courseId] || { present: 0, total: 0 };
@@ -50,7 +51,16 @@ export default function Summary() {
 
   return (
     <>
-    <SideBar />
+    <Header 
+      title="Summary Page" 
+      subtitle="View your summary here!"
+    />
+
+    <SideBar
+      isSidebarOpen={isSidebarOpen}
+      sidebarClose={toggleSideBar}
+    />
+
       <main className="
         max-w-[800px]
         w-full
@@ -64,6 +74,7 @@ export default function Summary() {
         lg:ml-[350px]
         xl:ml-[350px]
         md:ml-0
+        mt-14
       ">
 
         {/* STATUS BANNER */}
