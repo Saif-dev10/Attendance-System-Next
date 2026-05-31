@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { SideBar } from "@/components/Sidebar";
+import { Header } from "@/components/Header";
 
 export default function SemesterSetup() {
   const [showMessage, setShowMessage] = useState(false);
@@ -76,8 +77,10 @@ export default function SemesterSetup() {
 
   return (
     <>
+    <Header />
     <SideBar />
       <main className="max-w-[600px] px-5 py-10 font-['Segoe_UI',system-ui,sans-serif] bg-white text-black min-h-screen md:ml-35 lg:ml-80">
+
       {showMessage && (
         <div className="fixed top-[50px] right-[380px] z-[1000]">
           <div className="bg-emerald-500 text-white px-6 py-4 rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.15)] flex items-center gap-2">
@@ -87,7 +90,7 @@ export default function SemesterSetup() {
       )}
 
       {/* Progress Bar */}
-      <div className="flex items-center justify-center mb-10 px-5 max-[640px]:px-2.5">
+      <div className="flex items-center justify-center mb-10 px-5 max-[640px]:px-2.5 mt-14">
         <div className="flex flex-col items-center gap-2">
           <span className="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-semibold text-base shadow-[0_4px_12px_rgba(59,130,246,0.3)]">
             1
