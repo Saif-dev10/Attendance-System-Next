@@ -107,7 +107,7 @@ export default function Summary() {
             return (
               <div
                 key={course.id}
-                className={`relative p-5 rounded-xl border bg-white transition-all duration-200 hover:-translate-y-[1px] hover:shadow-md
+                className={`relative p-5 rounded-xl border-gray-500 shadow-md bg-white transition-all duration-200 hover:-translate-y-[1px] hover:shadow-md
                   ${
                     status === "eligible"
                       ? "before:content-[''] before:absolute before:left-0 before:top-4 before:bottom-4 before:w-[3px] before:bg-green-500"

@@ -189,7 +189,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             <button
               onClick={() => navigate.push("/attendance")}
-              className="flex items-center gap-4 p-6 rounded-xl shadow-sm bg-blue-600 text-white"
+              className="flex items-center gap-4 p-6 rounded-xl shadow-sm bg-blue-600 text-white active:opacity-75 cursor-pointer"
             >
               ✏️
               <div className="flex-1">
@@ -205,7 +205,7 @@ export default function Dashboard() {
 
             <button
               onClick={() => navigate.push("/table")}
-              className="flex items-center gap-4 p-6 rounded-xl shadow-sm border"
+              className="flex items-center gap-4 p-6 rounded-xl shadow-sm border-gray-800 active:opacity-75 cursor-pointer"
             >
               📅
               <div className="flex-1">
@@ -260,7 +260,7 @@ export default function Dashboard() {
                     <button
                       key={course.id}
                       onClick={() => navigate.push("/attendance")}
-                      className="flex justify-between items-center w-full p-4 rounded-xl bg-gray-50 hover:bg-gray-100"
+                      className="flex justify-between items-center w-full p-4 rounded-xl bg-gray-50 hover:bg-gray-100 active:opacity-75 cursor-pointer"
                     >
                       <div className="text-left">
                         <p className="font-semibold">

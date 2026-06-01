@@ -273,14 +273,14 @@ export default function Attendance() {
                       <>
                         <button
                           onClick={() => markAttendance(course.id, "present")}
-                          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-100 text-green-700 font-semibold hover:bg-green-200 transition"
+                          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-100 text-green-700 font-semibold hover:bg-green-200 transition active:opacity-75 cursor-pointer"
                         >
                           ✓ Present
                         </button>
 
                         <button
                           onClick={() => markAttendance(course.id, "absent")}
-                          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-red-100 text-red-700 font-semibold hover:bg-red-200 transition"
+                          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-red-100 text-red-700 font-semibold hover:bg-red-200 transition active:opacity-75 cursor-pointer"
                         >
                           ✗ Absent
                         </button>
@@ -300,7 +300,7 @@ export default function Attendance() {
 
                         <button
                           onClick={() => changeMark(course.id)}
-                          className="text-sm text-gray-500 underline hover:text-gray-700"
+                          className="text-sm text-gray-500 underline hover:text-gray-700 active:opacity-75 cursor-pointer"
                         >
                           ↺ Change
                         </button>

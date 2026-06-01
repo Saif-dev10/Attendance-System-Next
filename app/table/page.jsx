@@ -241,7 +241,7 @@ export default function TablePage() {
 
           <button
             onClick={addToSchedule}
-            className="w-full p-3 bg-emerald-500 text-white rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-emerald-600 transition active:opacity-80"
+            className="w-full p-3 bg-emerald-500 text-white rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-emerald-600 transition active:opacity-80 cursor-pointer"
           >
             + Add to Schedule
           </button>
@@ -292,7 +292,7 @@ export default function TablePage() {
         <div className="sticky bottom-5 flex justify-center">
           <button
             onClick={saveInfo}
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold shadow-[0_10px_20px_rgba(59,130,246,0.3)] hover:shadow-[0_14px_28px_rgba(59,130,246,0.4)] transition"
+            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold shadow-[0_10px_20px_rgba(59,130,246,0.3)] hover:shadow-[0_14px_28px_rgba(59,130,246,0.4)] transition active:opacity-75 cursor-pointer"
           >
             💾 Save Timetable
           </button>
