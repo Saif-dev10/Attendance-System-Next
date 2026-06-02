@@ -35,7 +35,7 @@ export default function LandingPage() {
           </div>
 
           <button
-            onClick={() => router.push("/form")}
+            onClick={() => router.push("/social")}
             className="px-5 py-2.5 bg-[#1a1a1a] text-white rounded-lg text-sm font-semibold hover:bg-[#333] active:opacity-75 cursor-pointer"
           >
             Get Started
@@ -65,7 +65,7 @@ export default function LandingPage() {
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
               <button
-                onClick={() => router.push("/form")}
+                onClick={() => router.push("/social")}
                 className="px-7 py-3.5 bg-[#1a1a1a] text-white rounded-xl font-semibold hover:bg-[#333] active:opacity-75 cursor-pointer"
               >
                 Start Tracking
@@ -279,7 +279,7 @@ export default function LandingPage() {
           </p>
 
           <button
-            onClick={() => router.push("/form")}
+            onClick={() => router.push("/social")}
             className="px-8 py-4 bg-[#1a1a1a] text-white rounded-xl font-semibold active:opacity-75 cursor-pointer"
           >
             Get Started Free

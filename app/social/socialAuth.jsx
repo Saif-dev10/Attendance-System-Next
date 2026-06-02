@@ -66,13 +66,6 @@ export default function SocialAuth() {
                 {isSignIn ? " Sign up" : " Sign in"}
               </span>
             </p>
-
-            <button
-              type="button"
-              className="bg-blue-500 text-white p-3 rounded-lg cursor-pointer font-semibold hover:bg-blue-600 active:opacity-75"
-            >
-              {isSignIn ? "Login" : "Create Account"}
-            </button>
           </form>
         </section>
       </div>
