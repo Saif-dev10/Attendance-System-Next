@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
+import { signIn } from "next-auth/react";
 
 export default function SocialAuth() {
   const router = useRouter();
@@ -10,21 +11,6 @@ export default function SocialAuth() {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
-
-
-  // function toggleSignInSignUp() {
-  //   setErrorMessage("");
-
-  //   setIsSignIn((prev) => {
-  //     const newState = !prev;
-
-  //     if (newState) {
-  //       setName("");
-  //     }
-
-  //     return newState;
-  //   });
-  // }
 
   useEffect(() => {
     let timer;
@@ -37,61 +23,6 @@ export default function SocialAuth() {
 
     return () => clearTimeout(timer);
   }, [showMessage]);
-
-  // function validateForm() {
-  //   if (!email.trim()) return "Email is required.";
-
-  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  //   if (!emailRegex.test(email)) {
-  //     return "Please enter a valid email.";
-  //   }
-
-  //   if (!isSignIn && !name.trim()) {
-  //     return "Name is required.";
-  //   }
-
-  //   if (!password) return "Password is required.";
-
-  //   if (password.length < 8) {
-  //     return "Password must be at least 8 characters.";
-  //   }
-
-  //   if (!/[A-Z]/.test(password)) {
-  //     return "Password must contain at least one uppercase letter.";
-  //   }
-
-  //   if (!/[a-z]/.test(password)) {
-  //     return "Password must contain at least one lowercase letter.";
-  //   }
-
-  //   if (!/[0-9]/.test(password)) {
-  //     return "Password must contain at least one number.";
-  //   }
-
-  //   if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
-  //     return "Password must contain at least one special character.";
-  //   }
-
-  //   return null;
-  // }
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   const error = validateForm();
-
-  //   if (error) {
-  //     setErrorMessage(error);
-  //     return;
-  //   }
-
-  //   setShowMessage(true);
-
-  //   setTimeout(() => {
-  //     router.push("/semesterSetup");
-  //   }, 1500);
-  // }
 
   return (
     <section className="h-screen w-full flex items-center justify-center flex-col bg-white text-black">
@@ -110,24 +41,26 @@ export default function SocialAuth() {
         )}
 
         <section className="flex items-center justify-center">
-          <form
-            // onSubmit={handleSubmit}
-            className="w-full max-w-[500px] flex flex-col p-6 rounded-xl shadow-lg"
-          >
+          <form className="w-full max-w-[500px] flex flex-col p-6 rounded-xl shadow-lg">
             <p className="text-red-500 text-center text-[1.1rem] mb-3">
               {errorMessage}
             </p>
 
-            {/* Social Form */}
-
-            <button type="submit" className="flex justify-center items-center gap-2 py-4 bg-gray-50 hover:bg-gray-100 active:opacity-75 cursor-pointer">
-                <FcGoogle /> Sign in with Google
+            <button
+              type="button"
+              onClick={() =>
+                signIn("google", {
+                  callbackUrl: "/setup",
+                })
+              }
+              className="flex justify-center items-center gap-2 py-4 bg-gray-50 hover:bg-gray-100 active:opacity-75 cursor-pointer"
+            >
+              <FcGoogle /> Sign in with Google
             </button>
 
             <p className="text-center text-[0.9rem] my-5 text-black">
               Click here to
               <span
-                // onClick={toggleSignInSignUp}
                 className="text-blue-600 cursor-pointer font-semibold hover:underline"
               >
                 {isSignIn ? " Sign up" : " Sign in"}
@@ -135,7 +68,7 @@ export default function SocialAuth() {
             </p>
 
             <button
-              type="submit"
+              type="button"
               className="bg-blue-500 text-white p-3 rounded-lg cursor-pointer font-semibold hover:bg-blue-600 active:opacity-75"
             >
               {isSignIn ? "Login" : "Create Account"}

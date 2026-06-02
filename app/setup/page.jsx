@@ -84,7 +84,7 @@ export default function SemesterSetup() {
     <>
     <Header 
       title="Semester Setup" 
-      subtitle="Step 2: Add your semester setup here"
+      subtitle="Step 1: Add your semester setup here"
     />
 
     <SideBar 
