@@ -291,7 +291,7 @@ export default function LandingPage() {
       {/* <footer className="py-10 px-6 bg-[#fafafa]">
         <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 font-bold">
+            <div className="flex flex-col items-center gap-2 font-bold">
               <div className="w-8 h-8 bg-[#1a1a1a] text-white rounded-lg flex items-center justify-center">
                 A
               </div>
@@ -307,6 +307,29 @@ export default function LandingPage() {
           </span>
         </div>
       </footer> */}
+
+      <footer className="bg-[#fafafa] py-10 px-6">
+        <div className="flex flex-col text-gray-400 text-sm items-center md:flex-col gap-4 lg:flex-row lg:justify-between">
+
+          <div className="flex flex-col gap-1 justify-center items-center md:flex-col gap-2 lg:flex lg:gap-8 lg:flex-row ">
+
+            <div className="flex gap-2">
+              <p className="bg-[#1a1a1a] w-8 h-8 text-white flex items-center justify-center rounded-lg">
+                A
+              </p>
+
+              <p className="text-black font-bold text-lg">Attendance Tracker</p>
+            </div>
+
+            <div>
+              <p>Student attendance tracking, simplified.</p>
+            </div>
+          </div>
+
+          © {new Date().getFullYear()} Attendance Tracker
+        </div>
+        
+      </footer>
     </div>
   );
 }
